@@ -67,7 +67,11 @@ def set_status(account, grovstatus_file, options):
     # let's read metadata from grooveshark file
     grovdata = file(grovstatus_file, 'r').read()[:-1]
 
-    title, album, author, status, play_url, album_url = grovdata.split('\t')
+    try:
+        title, album, author, status, play_url, album_url = grovdata.split('\t')
+    except ValueError:
+        # empty file, right after start of grooveshark
+        status = 'empty'
 
 
     # we change status when we are really playing any song
