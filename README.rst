@@ -1,6 +1,8 @@
 Description
 ===========
 
+  Right now WORKS ONLY AT LINUX.
+
   Script reads current song data from Grooveshark desktop status and puts it as
   gajim account status message.
 
